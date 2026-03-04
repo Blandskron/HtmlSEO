@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bastian Landskron | Portfolio Neubrutalista</title>
+    <style>
+      :root {
+          --black: #000000;
+          --white: #ffffff;
+          --yellow: #f8e71c;
+          --cyan: #00e5ff;
+          --pink: #ff006e;
+          --lime: #ccff00;
+          --orange: #ff7a00;
+          --shadow: 8px 8px 0px 0px #000000;
+      }
+
+      * {
+          margin: 0;
+          padding: 0;
+          box-sizing: border-box;
+          font-family: 'Arial Black', Gadget, sans-serif;
+      }
+
+      body { background-color: var(--cyan); }
+
+      /* Reusable Components */
+      .card {
+          background: var(--white);
+          border: 4px solid var(--black);
+          box-shadow: var(--shadow);
+          padding: 25px;
+      }
+
+      .btn {
+          border: 4px solid var(--black);
+          box-shadow: 4px 4px 0px 0px var(--black);
+          padding: 10px 20px;
+          font-weight: bold;
+          cursor: pointer;
+          text-transform: uppercase;
+          transition: 0.1s;
+      }
+
+      .btn:active {
+          transform: translate(2px, 2px);
+          box-shadow: 2px 2px 0px var(--black);
+      }
+
+      .section-tag {
+          display: inline-block;
+          padding: 10px 25px;
+          border: 4px solid var(--black);
+          box-shadow: 6px 6px 0px var(--black);
+          font-size: 1.5rem;
+          margin-bottom: 20px;
+      }
+
+      /* Navbar */
+      .navbar {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          padding: 20px 5%;
+          background: var(--yellow);
+          border-bottom: 4px solid var(--black);
+      }
+
+      .logo-box {
+          background: var(--black);
+          color: var(--yellow);
+          padding: 10px 20px;
+          font-size: 1.2rem;
+      }
+
+      .nav-links a {
+          text-decoration: none;
+          color: var(--black);
+          margin-left: 20px;
+          font-size: 0.9rem;
+      }
+
+      /* Hero Section */
+      .hero { padding: 60px 5%; }
+      .hero-container { display: flex; gap: 40px; align-items: center; }
+
+      .circle-pink {
+          width: 250px;
+          height: 250px;
+          background: var(--pink);
+          border: 6px solid var(--black);
+          border-radius: 50%;
+      }
+
+      .avatar-wrapper { position: relative; }
+      .badge-dev {
+          position: absolute;
+          bottom: 10px; right: -10px;
+          background: var(--lime);
+          border: 4px solid var(--black);
+          padding: 5px 15px;
+      }
+
+      .hero-card { flex: 1; border: 4px solid var(--black); background: var(--white); box-shadow: 12px 12px 0px var(--black); padding: 30px; }
+      .hero-btns { margin-top: 20px; display: flex; gap: 15px; }
+
+      /* Sections */
+      .section-proyectos, .section-educacion {
+          background: var(--white);
+          padding: 60px 5%;
+          border-top: 4px solid var(--black);
+      }
+      .section-educacion { background: var(--lime); }
+
+      .section-intro { max-width: 800px; margin-bottom: 40px; }
+
+      .grid-container {
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+          gap: 30px;
+      }
+
+      /* Footer & Form */
+      .footer-section { background: var(--pink); padding: 60px 5%; border-top: 4px solid var(--black); }
+      .footer-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
+
+      .card-black { background: var(--black); color: var(--white); }
+      .input-group { margin-bottom: 15px; }
+      .input-group label { display: block; margin-bottom: 5px; color: var(--white); }
+      .input-group input, .input-group textarea {
+          width: 100%;
+          border: 3px solid var(--white);
+          background: var(--black);
+          color: var(--white);
+          padding: 10px;
+      }
+
+      .sub-footer {
+          margin-top: 60px;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          border-top: 4px solid var(--black);
+          padding-top: 20px;
+      }
+
+      /* Utility Colors */
+      .tag-pink { background: var(--pink); color: white; }
+      .tag-black { background: var(--black); color: white; }
+      .card-yellow { background: var(--yellow); }
+      .card-cyan { background: var(--cyan); }
+      .card-lime { background: var(--lime); }
+      .card-orange { background: var(--orange); }
+      .btn-orange { background: var(--orange); }
+      .btn-yellow { background: var(--yellow); }
+      .btn-lime { background: var(--lime); color: var(--black); }
+      .btn-white { background: var(--white); }
+      .bg-pink { background: var(--pink); }
+      .bg-orange { background: var(--orange); }
+      .full-width { width: 100%; }
+      .mt-20 { margin-top: 20px; }
+
+      .img-placeholder { height: 150px; border: 4px solid var(--black); margin-bottom: 15px; }
+      .color-boxes { display: flex; gap: 10px; }
+      .box { width: 40px; height: 40px; border: 3px solid var(--black); }
+      .box-cyan { background: var(--cyan); }
+      .box-lime { background: var(--lime); }
+      .box-orange { background: var(--orange); }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="logo-box">LOGO</div>
+        <div class="nav-links">
+            <a href="#">HOME</a>
+            <a href="#">SOBRE MI</a>
+            <a href="#">PROYECTOS</a>
+            <a href="#Educacion">EDUCACION</a>
+            <a href="#Contacto">CONTACTO</a>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <div class="hero-container">
+            <div class="avatar-wrapper">
+                <div class="circle-pink"></div>
+                <div class="badge-dev">DEV</div>
+            </div>
+            <div class="hero-card">
+                <h2>BASTIAN LANDSKRON</h2>
+                <p>Desarrollador Full Stack apasionado por crear experiencias digitales únicas. Especializado en React, TypeScript y diseño de interfaces modernas. Me encanta transformar ideas en productos digitales que realmente impactan.</p>
+                <div class="hero-btns">
+                    <button class="btn btn-orange">CONTACTO</button>
+                    <button class="btn btn-yellow">DESCARGA CV</button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="section-proyectos">
+        <div class="section-tag tag-pink">PROYECTOS</div>
+        <p class="section-intro">Estos son algunos de mis proyectos más destacados. Cada uno representa un desafío único y una oportunidad para aprender nuevas tecnologías...</p>
+        
+        <div class="grid-container">
+            <div class="card card-yellow">
+                <h3>PROYECTO 1</h3>
+                <div class="img-placeholder bg-pink"></div>
+                <p>Aplicación web full-stack desarrollada con React y Node.js. Incluye autenticación de usuarios y panel administrativo.</p>
+                <button class="btn btn-white full-width">VER EN GITHUB</button>
+            </div>
+            <div class="card card-cyan">
+                <h3>PROYECTO 2</h3>
+                <div class="img-placeholder bg-orange"></div>
+                <p>E-commerce moderno con carrito de compras, pasarela de pagos integrada y dashboard de analytics.</p>
+                <button class="btn btn-white full-width">VER EN GITHUB</button>
+            </div>
+            <div class="card card-lime">
+                <h3>PROYECTO 3</h3>
+                <div class="img-placeholder bg-pink"></div>
+                <p>Plataforma de gestión de proyectos con kanban boards y reportes automatizados. Stack: React y Firebase.</p>
+                <button class="btn btn-white full-width">VER EN GITHUB</button>
+            </div>
+        </div>
+    </section>
+
+    <section id="Educacion" class="section-educacion">
+        <div class="section-tag tag-black">EDUCACIÓN</div>
+        <p class="section-intro">Mi formación académica y profesional me ha permitido desarrollar una base sólida en desarrollo de software.</p>
+        
+        <div class="grid-container">
+            <div class="card card-orange">
+                <h3>UNIVERSIDAD</h3>
+                <p>Ingeniería en Informática - Universidad Técnica. Formación completa en desarrollo de software y bases de datos.</p>
+            </div>
+            <div class="card card-cyan">
+                <h3>BOOTCAMP</h3>
+                <p>Full Stack Web Development - Academia de Código. Programa intensivo de 6 meses enfocado en React y Node.js.</p>
+            </div>
+            <div class="card card-yellow">
+                <h3>CERTIFICACIONES</h3>
+                <p>AWS Certified Developer, Google UX Design Certificate y MongoDB University.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer id="Contacto" class="footer-section">
+        <div class="footer-grid">
+            <div class="footer-info">
+                <div class="card card-yellow">
+                    <h3>CONTACTO</h3>
+                    <ul>
+                        <li>■ CORREO@GMAIL.COM</li>
+                        <li>■ LINKEDIN.COM</li>
+                        <li>■ GITHUB.COM</li>
+                        <li>■ INSTAGRAM.COM</li>
+                    </ul>
+                </div>
+                <div class="card card-cyan mt-20">
+                    <h3>MIS SERVICIOS</h3>
+                    <p>+569 5555 6666</p>
+                    <a href="#">TÉRMINOS Y CONDICIONES</a>
+                </div>
+            </div>
+
+            <div class="footer-form card card-black">
+                <h3>ENVÍAME UN MENSAJE</h3>
+                <form>
+                    <div class="input-group">
+                        <label>NOMBRE</label>
+                        <input type="text">
+                    </div>
+                    <div class="input-group">
+                        <label>EMAIL</label>
+                        <input type="email">
+                    </div>
+                    <div class="input-group">
+                        <label>MENSAJE</label>
+                        <textarea rows="4"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-lime full-width">ENVIAR</button>
+                </form>
+            </div>
+        </div>
+
+        <div class="sub-footer">
+            <div class="tag-pink small-tag">HECHO CON AMOR POR YO</div>
+            <div class="color-boxes">
+                <div class="box box-cyan"></div>
+                <div class="box box-lime"></div>
+                <div class="box box-orange"></div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
