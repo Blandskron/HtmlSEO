@@ -39,7 +39,7 @@ Bastian Landskron, **Founder & CEO de Blandskron SpA**. Desarrollador Full Stack
 
 * **Sitio Web**: [blandskron.com](https://blandskron.com)
 * **LinkedIn**: [/in/blandskron](https://linkedin.com/in/blandskron)
-* **Podcast**: [Biblioteca Kronoshopia en Spotify](https://open.spotify.com)
+* **Podcast**: [Biblioteca Kronoshopia en Spotify](https://open.spotify.com/show/48SxEQcdgA3VIGymAyqFXV)
 * **Email**: `bastianlandskronfreelancer@gmail.com`
 
 ---
